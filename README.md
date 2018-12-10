@@ -28,7 +28,7 @@ The type values are appended to the step object.
 | :---: | :---: | :---: | :---: | :---: |
 | variable | String | The variable to apply the regular expression to. | no | - |
 | expression | String | The expression. | no | - |
-| resultVariable | String | The state variable to put the result in. This will contain an array of arrays containing all group data  | no | - |
+| resultVariable | String | The state variable to put the result in. This will contain an array of arrays containing all group data  | yes | result |
 | onSuccess | Step | The step when the regex is successful. | yes | - |
 | onFailure | Step | The step when the regex is not successful. | yes | - |
 
@@ -38,6 +38,43 @@ The type values are appended to the step object.
 | :---: | :---: | :---: | :---: | :---: |
 | variable | String | The variable of the array to iterate through. | no | - |
 | resultVariable | String | The variable name of the iterated item. | no | - |
-| step | Step | The step to take for each iteration. | yes | - |
-| completionStep | Step | The step to take after all iterations. | yes | - |
+| step | Step | The step to take for each iteration. | no | - |
+| onCompletion | Step | The step to take after all iterations. | no | - |
 
+##### requireInputs
+
+| Key | Type | Description | Optional | Default Value |
+| :---: | :---: | :---: | :---: | :---: |
+| variable | String | The variable of the array to iterate through. | no | - |
+| inputs | Array[Input] | The inputs to require. | no | - |
+| onSuccess | Step | The step when requiring is successful. | yes | - |
+| onFailure | Step | The step when requiring is not successful. | yes | - |
+
+##### deletion
+
+| Key | Type | Description | Optional | Default Value |
+| :---: | :---: | :---: | :---: | :---: |
+| variable | String | The variable to delete. | no | - |
+
+##### alert
+
+| Key | Type | Description | Optional | Default Value |
+| :---: | :---: | :---: | :---: | :---: |
+| text | String | The alert to show. | no | - |
+
+##### abort
+
+Aborts the entire opertaion.
+
+##### complete
+
+Completes the entire opertaion.
+
+### Input
+
+| Key | Type | Description | Optional | Default Value |
+| :---: | :---: | :---: | :---: | :---: |
+| name | String | The name of the variable. | no | - |
+| title | String | The title to display. | no | - |
+| isPassword | Boolean | Whether the input represents a password. | yes | false |
+| shouldSave | Boolean | Whether the input should be saved. | yes | false |
