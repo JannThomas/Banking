@@ -6,7 +6,7 @@
 | Key | Type | Description | Optional | Default Value |
 | :---: | :---: | :---: | :---: | :---: |
 | type | String | The type of the step. See below for options. | no | - |
-| nextStep | Step | The step to take after this one has been evaluated. This does not wait for asyncronious tasks to complete (for example, a web request). | yes | - |
+| nextStep | Step | The step to take after this one has been evaluated. This does wait for asyncronious tasks to complete. | yes | - |
 
 The type values are appended to the step object.
 
@@ -32,5 +32,12 @@ The type values are appended to the step object.
 | onSuccess | Step | The step when the regex is successful. | yes | - |
 | onFailure | Step | The step when the regex is not successful. | yes | - |
 
-##### 
+##### iterate
+
+| Key | Type | Description | Optional | Default Value |
+| :---: | :---: | :---: | :---: | :---: |
+| variable | String | The variable of the array to iterate through. | no | - |
+| resultVariable | String | The variable name of the iterated item. | no | - |
+| step | Step | The step to take for each iteration. | yes | - |
+| completionStep | Step | The step to take after all iterations. | yes | - |
 
